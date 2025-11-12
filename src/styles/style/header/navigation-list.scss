@@ -1,0 +1,46 @@
+:root {
+  --blue: #00acdc;
+}
+
+.navigation {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: #060b35;
+  }
+
+  &__link:hover {
+    color: var(--blue);
+  }
+}
+
+.is-active {
+  color: var(--blue);
+  position: relative;
+
+  &::after {
+    content: '';
+    background-color: var(--blue);
+    width: 37px;
+    height: 4px;
+    position: absolute;
+    top: 56px;
+  }
+}
